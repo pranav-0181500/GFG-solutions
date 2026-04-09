@@ -1,0 +1,11 @@
+import java.util.*;
+
+class GFG {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String num = sc.nextLine();
+       int  b=Integer.parseInt(num);
+        b=2*b;
+        System.out.println(b);
+    }
+}
