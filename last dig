@@ -1,0 +1,7 @@
+class Solution {
+    public int lastDigit(int n) {
+        // Code here
+        int dig=Math.abs(n)%10;
+        return dig;
+    }
+}
