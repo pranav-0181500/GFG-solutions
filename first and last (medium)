@@ -1,0 +1,44 @@
+class Solution {
+    public ArrayList<Integer> firstAndLast(int x, int arr[]) {
+        // Code here
+        int s=0;
+        int e=arr.length-1;
+        int idx1=-1;
+        while(s<=e)
+        {
+            int mid=s+(e-s)/2;
+            if (arr[mid]==x)
+            {
+                idx1=mid;
+                e=mid-1;
+            }
+            else if (arr[mid]<x)
+            s=mid+1;
+            else e=mid-1;
+        }
+        s=0;
+        e=arr.length-1;
+        int idx2=-1;
+        while(s<=e)
+        {
+           int mid=s+(e-s)/2;
+            if (arr[mid]==x)
+            {
+                idx2=mid;
+                s=mid+1;
+            }
+            else if (arr[mid]<x)
+            s=mid+1;
+            else e=mid-1;
+        }
+        ArrayList<Integer> ans=new ArrayList<>();
+        if (idx1==-1)
+        ans.add(-1);
+        else
+        {
+        ans.add(idx1);
+        ans.add(idx2);
+        }
+        return ans;
+    }
+}
