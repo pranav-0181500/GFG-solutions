@@ -1,0 +1,13 @@
+class Solution {
+    public ArrayList<Integer> getAlternates(int arr[]) {
+        // Code Here
+        ArrayList<Integer> ans=new ArrayList<>();
+        int i=0;
+        while (i<arr.length)
+        {
+            ans.add(arr[i]);
+            i=i+2;
+        }
+        return ans;
+    }
+}
