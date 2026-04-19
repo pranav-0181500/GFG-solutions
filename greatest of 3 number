@@ -1,0 +1,13 @@
+class Solution {
+    public int greatestOfThree(int a, int b, int c) {
+        // code here
+        int ans=Integer.MIN_VALUE;
+        if (a>=b && a>=c)
+        ans= a;
+        else if (b>=a && b>=c)
+        ans= b;
+        else if (c>=b && c>=a)
+        ans= c;
+        return ans;
+    }
+}
