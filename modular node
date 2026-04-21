@@ -1,0 +1,21 @@
+class Solution {
+    public int modularNode(Node head, int k) {
+        // Code here//Position this line where user code will be pasted.
+        Node temp=head;
+        int length=0;
+        while (temp!=null)
+        {
+            length++;
+            temp=temp.next;
+        }
+        temp=head;
+        int rem=length%k;
+        int n=length-rem;
+        if (n==0)return -1;
+        for (int i=1;i<n;i++)
+        {
+            temp=temp.next;
+        }
+        return temp.data;
+    }
+}
