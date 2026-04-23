@@ -1,0 +1,9 @@
+class Solution {
+    //  code here
+    public void helloFunction()
+    {
+        System.out.println("Hello");
+        
+    }
+    
+}
