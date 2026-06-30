@@ -1,0 +1,19 @@
+class Solution {
+    public static void sum(int aw, int arr[],ArrayList<Integer> ans,int idx)
+    {
+        int n=arr.length;
+        if (idx==n)
+        {
+            ans.add(aw);
+            return ;
+        }
+        sum(aw+arr[idx],arr, ans,idx+1);
+         sum(aw,arr, ans,idx+1);
+    }
+    public ArrayList<Integer> subsetSums(int[] arr) {
+        // code here
+        ArrayList<Integer> ans=new ArrayList<>();
+        sum(0,arr, ans,0);
+        return ans;
+    }
+}
