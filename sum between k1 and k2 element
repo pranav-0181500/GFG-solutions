@@ -1,0 +1,15 @@
+class Solution {
+    public static long sumBetweenTwoKth(long A[], long N, long K1, long K2) {
+        // Your code goes here
+        Arrays.sort(A);
+        long sum=0;
+    
+        int k1=(int)K1;
+        int k2=(int)K2;
+        for(int i=k1;i<k2-1;i++)
+        {
+            sum+=A[i];
+        }
+        return sum;
+    }
+}
