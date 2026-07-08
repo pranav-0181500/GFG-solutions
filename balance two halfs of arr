@@ -1,0 +1,21 @@
+class Solution {
+    public int minValueToBalance(List<Integer> arr) {
+        // code here
+        int n=arr.size();
+        int sum1=0;
+        int sum2=0;
+        for(int i=0;i<n/2;i++)
+        {
+             sum1+=arr.get(i);
+        }
+        for(int i=n/2;i<arr.size();i++)
+        {
+            sum2+=arr.get(i);
+        }
+            if(sum2>sum1)
+            return sum2-sum1;
+            else
+            return sum1-sum2;
+        
+    }
+};
