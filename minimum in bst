@@ -1,0 +1,15 @@
+class Solution {
+    public int minValue(Node root) {
+        // code here
+       
+        if(root==null)return -1; 
+        Node temp=root;
+        while(temp.left!=null)
+        {   
+            temp=temp.left;
+        
+        
+        }
+        return temp.data;
+    }
+}
