@@ -1,0 +1,14 @@
+class Solution {
+    public boolean isEven(Node head) {
+        // code here
+        int count=0;
+        Node temp=head;
+        while(temp!=null)
+        {
+            temp=temp.next;
+            count++;
+        }
+        if(count%2==0) return true;
+        else return false;
+    }
+}
