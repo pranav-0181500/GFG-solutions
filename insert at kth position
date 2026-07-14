@@ -1,0 +1,20 @@
+class Solution {
+    public Node insertPos(Node head, int pos, int val) {
+        // code here
+        Node newnode=new Node (val);
+        Node temp=head;
+        if(head==null) return newnode;
+        if(pos==1) 
+        {
+            newnode.next=head;
+            return newnode;
+        }
+        for(int i=1;i<pos-1;i++)
+        {
+            temp=temp.next;
+        }
+        newnode.next=temp.next;
+        temp.next=newnode;
+        return head;
+    }
+}
