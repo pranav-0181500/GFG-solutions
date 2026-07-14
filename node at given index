@@ -1,0 +1,21 @@
+class Solution {
+    public int GetNth(Node head, int index) {
+        // Code here
+        int count=0;
+        Node temp=head;
+        while(temp!=null)
+    {
+        temp=temp.next;
+        count++;
+        
+    }
+    temp=head;
+    if(index>count) return -1;
+    for(int i=1;i<index;i++)
+    {
+        temp=temp.next;
+        
+    }
+    return temp.data;
+    }
+}
