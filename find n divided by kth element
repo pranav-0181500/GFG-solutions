@@ -1,0 +1,21 @@
+class Solution {
+    public static int fractionalNode(Node head, int k) {
+        // Code here
+        Node temp=head;
+        if(head==null) return 0;
+        int count=0;
+        while(temp!=null)
+        {
+            count++;
+            temp=temp.next;
+        }
+        double total=Math.ceil((double)count/k);
+        temp=head;
+        for(int i=1;i<total;i++)
+        {
+            temp=temp.next;
+        }
+        return (int)temp.data;
+        
+    }
+}
