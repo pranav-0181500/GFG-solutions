@@ -1,0 +1,20 @@
+class Solution {
+    public static Node mirror(Node root)
+    {  if(root==null)return null;
+        Node head=root;
+        Node temp=root.right;
+        root.right=root.left;
+        root.left=temp;
+        mirror(root.left);
+        mirror(root.right);
+        return head;
+    }
+    boolean areMirror(Node a, Node b) {
+        // Your code here
+        if(a==null && b==null) return true;
+        if(a==null && b!=null)return false;
+        if(a!=null && b==null) return false;
+        mirror(a);
+        return a.data==b.data && areMirror(a.left,b.left) && areMirror(a.right,b.right);
+    }
+    }
