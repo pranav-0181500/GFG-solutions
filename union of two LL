@@ -1,0 +1,27 @@
+class Solution {
+    public Node makeUnion(Node head1, Node head2) {
+        // code here
+        LinkedHashSet<Integer> ans=new LinkedHashSet<>();
+        Node temp=head1;
+        while(temp!=null)
+        {
+            ans.add(temp.data);
+            temp=temp.next;
+        }
+        Node temp1=head2;
+        while(temp1!=null)
+        {
+            ans.add(temp1.data);
+            temp1=temp1.next;
+        }
+        Node dummy=new Node(-1);
+        Node tail=dummy;
+        for(int ele:ans)
+        {
+            tail.next=new Node(ele);
+            tail=tail.next;
+            
+        }
+        return dummy.next;
+    }
+}
