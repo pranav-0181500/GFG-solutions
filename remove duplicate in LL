@@ -1,0 +1,23 @@
+class Solution {
+    public Node removeDuplicates(Node head) {
+        // code here
+        
+        LinkedHashSet<Integer> ans=new LinkedHashSet<>();
+        Node temp=head;
+        while(temp!=null)
+        {
+            ans.add(temp.data);
+            temp=temp.next;
+        }
+        Node dummy=new Node(-1);
+        Node tail=dummy;
+        for(int ele:ans)
+        {
+            tail.next=new Node(ele);
+            tail=tail.next;
+        }
+        return dummy.next;
+    
+        
+    }
+}
