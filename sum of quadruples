@@ -1,0 +1,39 @@
+class Solution {
+    public ArrayList<ArrayList<Integer>> fourSum(int[] arr, int target) {
+        Arrays.sort(arr);
+        ArrayList<ArrayList<Integer>> temp=new ArrayList<>();
+        for(int i=0;i<arr.length-3;i++)
+          {    if(i>0 && arr[i]==arr[i-1])continue;
+              for(int j=i+1;j<arr.length-2;j++)
+              {  if(j>i+1 && arr[j]==arr[j-1])continue;
+                  int k=j+1;
+                  int l=arr.length-1;
+                  while(k<l)
+                  {
+                      int sum=target-arr[i]-arr[j];
+                      if(sum==arr[k]+arr[l])
+                      {        ArrayList<Integer> ans=new ArrayList<>();
+
+                          ans.add(arr[i]);
+                          ans.add(arr[j]);
+                          ans.add(arr[k]);
+                          ans.add(arr[l]);
+                          temp.add(ans);
+                          k++;
+                          l--;
+                          while (k < l && arr[k] == arr[k - 1])
+    k++;
+
+while (k < l && arr[l] == arr[l + 1])
+    l--;
+                      }
+                      else if(sum>arr[k]+arr[l])
+                      k++;
+                      else 
+                      l--;
+                  }
+              }
+          }
+          return temp;
+    }
+}
