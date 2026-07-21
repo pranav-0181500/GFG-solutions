@@ -1,0 +1,35 @@
+class Solution {
+    public boolean findTriplets(int[] arr) {
+        // code here.
+        int target=0;   
+        Arrays.sort(arr);
+        
+        boolean ans=false;
+        for(int i=0;i<arr.length-2;i++)
+        {
+            if(i>0 && arr[i]==arr[i-1])
+            continue;
+            int j=i+1;
+            int k=arr.length-1;
+            while(j<k)
+            {
+                int sum=target-arr[i];
+                if(sum==arr[j]+arr[k])
+                {
+                   ans=true;
+                   j++;
+                   k--;
+                }
+                else if(sum>arr[k]+arr[j])
+                {
+                    j++;
+                }
+                else 
+                {
+                    k--;
+                }
+            }
+        }
+        return ans;
+    }
+}
