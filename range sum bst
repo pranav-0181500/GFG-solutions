@@ -1,0 +1,28 @@
+/* Binary Tree Node Structure
+class Node {
+    int data;
+    Node left, right;
+    Node(int val) {
+        data = val;
+        left = right = null;
+    }
+}
+*/
+
+class Solution {
+    public int nodeSum(Node root, int l, int r) {
+        // code here
+            
+        if(root==null) return 0;
+        if(root.data<l) return nodeSum(root.right,l,r);
+        else if(root.data>r) return nodeSum(root.left,l,r);
+        else
+        {
+           int  ans=root.data;
+            ans+= nodeSum(root.left,l,r);
+           ans+= nodeSum(root.right,l,r);
+            return ans;
+        }
+          
+    }
+}
